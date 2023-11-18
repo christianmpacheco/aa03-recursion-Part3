@@ -1,6 +1,7 @@
 /***********************************************************************
-Write a recursive function called `fibonacci` that takes an integer, `n`,
-and returns the `n`th number in the Fibonacci sequence.
+1. Write a recursive function called `fibonacci` that takes an integer, `n`,
+and
+2. returns the `n`th number in the Fibonacci sequence.
 
 Not familiar with the Fibonacci sequence? Beginning with 0 and 1, we add the two
 previous numbers in the sequence together to form the next one:
@@ -12,17 +13,27 @@ examples below if you're unsure where to start!
 
 Examples:
 
-fibonacci(1); // 1
-fibonacci(2); // 1
-fibonacci(3); // 2
-fibonacci(4); // 3
-fibonacci(10); // 55
 ***********************************************************************/
 
 function fibonacci(n) {
-  // Your code here 
+  // edge case
+  if(n < 1) {
+    return null;
+  }
+  // base case
+  if(n === 1) {
+    return 1;
+  }
+  // recurisve step + recurisve step
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
-  
+
+
+console.log(fibonacci(-1)); // 1
+// console.log(fibonacci(2)); // 1
+// console.log(fibonacci(3)); // 2
+// console.log(fibonacci(4)); // 3
+// console.log(fibonacci(10)); // 55
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = fibonacci;
-  
