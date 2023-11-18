@@ -15,12 +15,16 @@ Examples:
 ***********************************************************************/
 
 function factorial(num) {
-  // Your code here
+  // base case
+  if (num === 1) return 1;
+  if (num < 1) return null;
+  // recursive
+  return num * factorial(num - 1);
 }
 
-factorial(1); // 1
-factorial(3); // 6
-factorial(5); // 120
+console.log(factorial(1)); // 1
+console.log(factorial(3)); // 6  --> 3*2*1
+console.log(factorial(5)); // 120 --> 5*4*3*2*1
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = factorial;
