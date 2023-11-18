@@ -12,27 +12,28 @@ Examples:
 // Helper Function
 function recursion(i, arr, result) {
   // if there is NO arrays within the array
-  if(i >= arr.length) {
+  if (i >= arr.length) {
     return;
   }
-// If there is "just one array array"
-  if(Array.isArray(arr[i])) { // True Array.isArray([]) --> True  What about? Array.isArray([[]]) --> True
-    recursion(0, arr[i], result)
+  // If there is "just one array array"
+  if (Array.isArray(arr[i])) {
+    // True Array.isArray([]) --> True  What about? Array.isArray([[]]) --> True
+    recursion(0, arr[i], result);
   } else {
     // If there are "multiple array" push the values into our result array
-    result.push(arr[i])
+    result.push(arr[i]);
   }
-  debugger
-  recursion(i + 1, arr, result)
+  debugger;
+  recursion(i + 1, arr, result);
 }
 
 // Main Function
 function flatten(arr) {
   // edge case
-  let result = []
+  let result = [];
   // helper function & recursice call
-  recursion(0, arr, result)
-// output
+  recursion(0, arr, result);
+  // output
   return result;
 }
 
